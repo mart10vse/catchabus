@@ -5,15 +5,17 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "@fitbit/sdk": "~5.0.1",
-    "@fitbit/sdk-cli": "^1.7.3"
+    "@fitbit/sdk-cli": "^1.7.3",
+    "jest": "^26.6.3",
+    "ts-jest": "<23.10.0"
   },
   "fitbit": {
-    "appUUID": "2bcaaca2-54b0-4b0e-b8a3-b59924caf6e2",
+    "appUUID": "3c204e00-1266-420e-90b7-273a93b01912",
     "appType": "app",
     "appDisplayName": "Catchabus",
     "iconFile": "resources/icon.png",
     "wipeColor": "#ffffff",
-    "requestedPermissions": [],
+    "requestedPermissions": ["access_location","access_heart_rate", "access_exercise"],
     "buildTargets": [
       "atlas",
       "vulcan"
@@ -23,6 +25,7 @@
   },
   "scripts": {
     "build": "fitbit-build",
-    "debug": "fitbit"
+    "debug": "fitbit",
+    "test": "jest"
   }
 }

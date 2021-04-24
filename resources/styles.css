@@ -1,12 +1,24 @@
-.defaultText {
-  font-size: 32;
-  font-family: System-Regular;
-  font-weight: regular;
-  text-length: 32;
+.application-fill           { fill: #cdffa2; }
+.foreground-fill            { fill: fb-white; }
+.background-fill            { fill: fb-black; }
+
+#stop-pool {
+  width: 100%;
+  x: 0%;
+  y: 10%;
 }
 
-#background {
+#bus-pool {
   width: 100%;
-  height: 100%;
-  fill: white;
+  x: 0%;
+  y: 10%;
+}
+
+#endBtn {
+  x: 50%-36;
+  y: 75%;
+}
+
+#endBtn #image{
+  href: "check.png";
 }

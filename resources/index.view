@@ -1,3 +1,113 @@
 <svg>
-  <rect id="background" />
+  <symbol id='my-item' href='#tile-list-item' class="list-item" height='70' display='none' focusable="false" system-events="all">
+   <g id='transform'> <!-- here you can animate your tile-->
+    <rect id='bg' height='90%' width='100%' pointer-events="all"/>
+    <text id='text' fill='white' y='50%+8' x='10%' text-length="32"></text>
+   </g>
+ </symbol>
+ <symbol id="rad_grad">
+  <svg>
+    <gradientRect x="0" y="0" width="100%" height="100%"
+      gradient-type="radial"
+      gradient-x1="50%" gradient-y1="50%"
+      gradient-x2="50%+150" gradient-y2="50%+150"
+      gradient-color1="#cdffa2" gradient-opacity1="0.8"
+      gradient-color2="black" gradient-opacity2="0"/>
+  </svg>
+ </symbol>
+ <symbol id="rounded_rect">
+  <rect rx='15' ry='15' width='40%' height='20%' fill='gray' />
+ </symbol>
+ 
+  <svg id="screen_stops">
+  <use href="#rad_grad" />
+    <text x="50%" y="25" fill="white" font-size="20" text-anchor="middle">Select stop</text>
+    <line x1="0" y1="30" x2="100%" y2="30" fill="gray" stroke-width="2" />
+
+    <use id="stops-list" href="#tile-list" y="32" x="0" width="100%" height="100%-70">
+      <var id='virtual' value='1' />
+      <var id="reorder-enabled" value="1" />
+      <var id="peek-enabled" value="1" />
+
+      <use id='stop-pool' href='#tile-list-pool'>
+        <use id="stop-pool[0]" href="#my-item" />
+        <use id="stop-pool[1]" href="#my-item" />
+        <use id="stop-pool[2]" href="#my-item" />
+        <use id="stop-pool[3]" href="#my-item" />
+        <use id="stop-pool[4]" href="#my-item" />
+        <use id="stop-pool[5]" href="#my-item" />
+        <use id="stop-pool[6]" href="#my-item" />
+        <use id="stop-pool[7]" href="#my-item" />
+        <use id="stop-pool[8]" href="#my-item" />
+        <use id="stop-pool[9]" href="#my-item" />
+        <use id="stop-pool[10]" href="#my-item" />
+        <use id="stop-pool[11]" href="#my-item" />
+        <use id="stop-pool[12]" href="#my-item" />
+        <use id="stop-pool[13]" href="#my-item" />
+        <use id="stop-pool[14]" href="#my-item" />
+      </use>
+    </use>
+  </svg>
+  <svg id="screen_bus" display="none">
+  <use href="#rad_grad" />
+    <text x="50%" y="25" fill="white" font-size="20" text-anchor="middle">Select connection</text>
+    <line x1="0" y1="30" x2="100%" y2="30" fill="gray" stroke-width="2" />
+    
+    <use id="bus-list" href="#tile-list" y="32" x="0" width="100%" height="100%-70">
+      <var id="separator-height-bottom" value="2" />
+      <var id='virtual' value='1' />
+      <var id="reorder-enabled" value="1" />
+      <var id="peek-enabled" value="1" />
+
+      <use id='bus-pool' href='#tile-list-pool'>
+        <use id="bus-pool[0]" href="#my-item" />
+        <use id="bus-pool[1]" href="#my-item" />
+        <use id="bus-pool[2]" href="#my-item" />
+        <use id="bus-pool[3]" href="#my-item" />
+        <use id="bus-pool[4]" href="#my-item" />
+        <use id="bus-pool[5]" href="#my-item" />
+        <use id="bus-pool[6]" href="#my-item" />
+        <use id="bus-pool[7]" href="#my-item" />
+        <use id="bus-pool[8]" href="#my-item" />
+        <use id="bus-pool[9]" href="#my-item" />
+        <use id="bus-pool[10]" href="#my-item" />
+        <use id="bus-pool[11]" href="#my-item" />
+        <use id="bus-pool[12]" href="#my-item" />
+        <use id="bus-pool[13]" href="#my-item" />
+        <use id="bus-pool[14]" href="#my-item" />
+      </use>
+    </use>
+  </svg>
+  <svg id="screen_run" display="none">
+  <use href="#rad_grad" />
+  <text x="50%" y="25" fill="white" font-size="20" text-anchor="middle">Run/walk</text>
+  <line x1="0" y1="30" x2="100%" y2="30" fill="gray" stroke-width="2" />
+
+  <use href="#rounded_rect" x="8%" y="18%" />
+  <image width="24" height="24" x="8%+12" y="18%+24" fill="white" href="timer.png" />
+
+  <use href="#rounded_rect" x="52%" y="18%" />
+  <image width="24" height="24" x="52%+12" y="18%+24" fill="white" href="heart_rate.png" />
+
+  <use href="#rounded_rect" x="8%" y="42%" />
+  <image width="24" height="24" x="8%+12" y="42%+24" fill="white" href="distance.png" />
+
+  <use href="#rounded_rect" x="52%" y="42%" />
+  <image width="24" height="24" x="52%+12" y="42%+24" fill="white" href="steps.png" />
+
+  <text x="25%+20" y="18%+44" id="time" fill="white" font-size="20" text-anchor="middle" text-length="10"></text>
+  <text x="75%" y="18%+44" id="hr" fill="white" font-size="20" text-anchor="middle"></text>
+  <text x="25%+20" y="42%+44" id="distance" fill="white" font-size="20" text-anchor="middle" text-length="20"></text>
+  <text x="50%" y="70%+5" id="run" fill="white" font-size="30" text-anchor="middle" text-length="30">Time's up!</text>
+
+  <use id="endBtn" href="#icon-button" class="medium-button application-fill plus-button" />
+    
+  </svg>
+  <svg id="screen_results" display="none">
+  <use href="#rad_grad" />
+    <text x="50%" y="25" fill="white" font-size="20" text-anchor="middle">Results</text>
+    <line x1="0" y1="30" x2="100%" y2="30" fill="gray" stroke-width="2" />
+  <text x="180" y="170" id="hr" fill="white" font-size="20" text-anchor="middle">Jseš fakt frajer!</text>
+  </svg>
 </svg>
+
