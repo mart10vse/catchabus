@@ -1,3 +1,6 @@
+/**
+ * Represents custom log solution because console.log sometimes doesnt work properly for companion
+ */
 export function createLogger(prefix) {
     return {
       error: function(message, ...args) {

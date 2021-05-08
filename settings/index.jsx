@@ -1,8 +1,12 @@
+/**
+ * Represents UI and logic of settings in companion app
+ */
 function Settings(props) {
   return (
     <Page>
       <Section
-        title={<Text bold align="center">Prague MHD Stops</Text>}>
+      // defines list of saved stops
+        title={<Text bold align="center">Stops</Text>}>
         <AdditiveList
           settingsKey='stops'
           onListChange={(list) => {
@@ -21,6 +25,8 @@ function Settings(props) {
               <TextImageRow sublabel={connections}/>
             </Section>
           }
+          // search input field with autocomplete
+          // values autocompleted can be either stop name or route short name (number of bus) 
           addAction={
             <TextInput
               title="Add a station"
